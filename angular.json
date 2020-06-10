@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "photo-app"
+    }
+  },
+  "defaultProject": "photo-app",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-12">
+
+        <div class="albums" *ngIf="albums">
+            <div class="album col-2" *ngFor="let album of albums">
+                <h5 class="mt-3 mb-1">{{album.albumId}}</h5>
+                <img src="{{album.thumbnailUrl}}" alt="{{album.albumId}}">
+            </div>
+        </div>
+
+    </div>
+</div>
