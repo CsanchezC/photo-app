@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Album, Photo } from "../interfaces/models";
 
 @Component({
@@ -20,9 +20,9 @@ export class GridComponent implements OnInit {
     return this.http.get<any[]>(this.DATA_URL);
   }
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
       this.getData().subscribe((data: Array<Photo>) =>{
@@ -32,6 +32,14 @@ export class GridComponent implements OnInit {
           photos: data.filter(e => e.albumId === Number(this.id))
         }});
     });
+  }
+
+  goToPhoto(photoId){
+    this.router.navigate(['/detail-view'], {queryParams: {id: photoId}});
+  }
+
+  goBack(){
+    this.router.navigate(['/list-view']);
   }
 
 }

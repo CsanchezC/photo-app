@@ -12,15 +12,16 @@ export class ListComponent implements OnInit {
 
   // readonly DATA_URL ="https://jsonplaceholder.typicode.com/photos";
   readonly DATA_URL ="assets/data.json";
-  albums: Array<Album> = new Array<Album>();
 
-  constructor(private http: HttpClient, private router: Router) { }
+  albums: Array<Album> = new Array<Album>();
 
   getData(){
     return this.http.get<any[]>(this.DATA_URL);
   }
 
-  ngOnInit(): void {
+  constructor(private http: HttpClient, private router: Router) { }
+
+  ngOnInit(){
     this.getData().subscribe((data: Array<Photo>) =>{
       for (let i = 0; i < data.length; i++) {
         if (this.albums.filter(e => e.albumId === data[i].albumId).length == 0){

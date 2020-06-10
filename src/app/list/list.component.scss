@@ -1,5 +1,8 @@
 .album {
-    cursor: pointer;
     float: left;
     text-align: center;
+}
+
+.album>img {
+    cursor: pointer;
 }

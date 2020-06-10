@@ -1,4 +1,12 @@
+.back {
+    margin: 10px 20px;
+}
+
 .photo {
     float: left;
     margin: 10px 0;
+}
+
+.photo>img {
+    cursor: pointer;
 }

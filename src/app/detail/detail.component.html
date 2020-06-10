@@ -1,1 +1,12 @@
-<p>detail works!</p>
+<div class="row">
+    <div class="col-12">
+
+        <button class="back" (click)="goBack(photo.albumId)">Back</button>
+
+        <div class="photo" *ngIf="photo">
+            <img src="{{photo.url}}" class="mr-3" alt="{{photo.id}}">
+            <h3 class="text mt-1 mb-1">{{photo.title}}</h3>
+        </div>
+
+    </div>
+</div>
