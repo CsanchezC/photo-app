@@ -1,1 +1,15 @@
-<p>grid works!</p>
+<div class="row">
+    <div class="col-12">
+
+        <div class="photos" *ngIf="album">
+            <div class="photo col-3 media" *ngFor="let photo of album.photos">
+                <img src="{{photo.thumbnailUrl}}" class="mr-3" alt="{{photo.id}}">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">{{photo.id}}</h5>
+                    <span>{{photo.title}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

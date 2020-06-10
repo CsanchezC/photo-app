@@ -35,4 +35,8 @@ export class ListComponent implements OnInit {
     });
   }
 
+  goToAlbum(albumId){
+    this.router.navigate(['/grid-view'], {queryParams: {id: albumId}});
+  }
+
 }
